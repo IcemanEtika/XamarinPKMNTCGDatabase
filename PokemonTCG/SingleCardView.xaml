@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonTCG.SingleCardView"
+             Title="{Binding cardName}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="20,20,20,5" >
+                    <Image x:Name="Card"/>
+                    <Button x:Name="AddButton" Text="Add to Favorites" WidthRequest="120" HorizontalOptions="Center" Clicked="Save_Card"></Button>
+                    <Button x:Name="RemoveButton" Text="Remove Favorite" WidthRequest="120" HorizontalOptions="Center" Clicked="Delete_Card"></Button>
+                </StackLayout>
+
+                <StackLayout Padding="50,0,50,50">
+                    <Label Text="General Information" FontSize="18" FontAttributes="Bold"/>
+                    <Label x:Name="cRarity" Text="Rarity: "/>
+                    <Label x:Name="cArtist" Text="Artist: "/>
+                    <Label x:Name="cSet" Text="Set Name: "/>
+                    <Label x:Name="cSetNum" Text="Set Number: "/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

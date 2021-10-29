@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonTCG.MainPage"
+             Title="Pokemon TCG Database">
+
+    <StackLayout>
+        <Button Text="View Favorites" Clicked="Button_Clicked"/>
+        <SearchBar Placeholder="Search for sets..." TextChanged="OnTextChanged" />
+        <ListView x:Name="SetList" ItemSelected="viewSetCards">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell Text="{Binding name}" Detail="{Binding releaseDate}" ImageSource="{Binding images.symbol}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

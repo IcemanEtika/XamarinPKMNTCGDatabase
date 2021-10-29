@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonTCG.FavoriteList"
+             Title="Favorite Cards">
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <SearchBar Placeholder="Search for cards..." TextChanged="OnTextChanged" />
+            <Button Text="Delete All" Clicked="DeleteAll" HorizontalOptions="End" BackgroundColor="Red" TextColor="White" FontAttributes="Bold"/>
+            <ListView x:Name="CardList" ItemSelected="viewCard">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding name}" Detail="{Binding setName}" ImageSource="{Binding imgSmall}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

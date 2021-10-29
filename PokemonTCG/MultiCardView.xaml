@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonTCG.MultiCardView">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="?"
+                 Order="Primary"
+                 Priority="0" 
+                 Clicked="ShowInfo"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Search for cards..." TextChanged="OnTextChanged" />
+            <ListView x:Name="CardList" ItemSelected="viewCard">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding name}" Detail="{Binding number}" ImageSource="{Binding images.small}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
